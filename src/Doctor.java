@@ -7,8 +7,9 @@ public class Doctor {
     String speciality;
 
     public Doctor() {
-        System.out.println("Contruyendo el Objeto Doctor");
         id++;
+        System.out.println("Contruyendo el Objeto Doctor");
+
     }
 
     public Doctor(String name) {
