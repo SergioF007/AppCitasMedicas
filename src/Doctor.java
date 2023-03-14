@@ -1,3 +1,5 @@
+import java.util.Scanner;
+
 public class Doctor {
     //Atributos
     static int id = 0; //Autoincrement
@@ -22,5 +24,6 @@ public class Doctor {
     public void showID(){
         System.out.println("ID Doctor: " + id);
     }
+
 
 }
