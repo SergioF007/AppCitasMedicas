@@ -37,18 +37,14 @@ public class UIMenu {
 
     static void showPatientMenu() {
         int response = 0;
-
-
         do {
             System.out.println("\n\n");
             System.out.println("Patient");
             System.out.println("1. Book an appointment");
             System.out.println("2. My appointment");
             System.out.println("0. Return");
-
             Scanner sc = new Scanner(System.in);
             response = Integer.valueOf(sc.nextLine());
-
             switch (response) {
                 case 1:
                     System.out.println(":: Book an appointment");
@@ -68,7 +64,6 @@ public class UIMenu {
             }
 
         }while (response != 0);
-
 
     }
 }
