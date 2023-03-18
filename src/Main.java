@@ -13,6 +13,11 @@ public class Main {
 
         // creo un paciente
         Patient patient = new Patient("Jame Rodrigez", "jame10@gmail.com");
+        patient.setWeight(80);
+        System.out.println(patient.getWeight());
+
+        patient.setPhoneNumber("123456789");
+        System.out.println(patient.getPhoneNumber());
 
 
 

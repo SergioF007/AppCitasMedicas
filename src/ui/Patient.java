@@ -54,7 +54,12 @@ public class Patient {
     }
 
     public void setPhoneNumber(String phoneNumber) {
-        this.phoneNumber = phoneNumber;
+
+        if (phoneNumber.length()==8){
+            this.phoneNumber = phoneNumber;
+        }else {
+            System.out.println("El numero de telefono debe ser de 8 Digitos");
+        }
     }
 
     public String getBirthday() {
