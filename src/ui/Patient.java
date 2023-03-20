@@ -2,7 +2,7 @@ package ui;
 
 public class Patient {
 
-    int id = 0;
+    private int id = 0;
     private String name;
     private String email;
     private String address;
@@ -16,6 +16,14 @@ public class Patient {
     public Patient(String name, String email) {
         this.name = name;
         this.email = email;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public void setWeight(double weight){
