@@ -78,7 +78,7 @@ public class Doctor {
 
     }
     public ArrayList<AvailableAppointment> getAvailableAppointments(){
-        return availableAppointments
+        return availableAppointments;
     }
 
 }
