@@ -13,6 +13,10 @@ public class Patient extends User{
 
     }
 
+    @Override
+    public String toString() {
+        return super.toString() + "\nAge: " + birthday + " Weigth: " + getWeight() + "\nHeight: " + getHeight() + " Blood: " + blood;
+    }
 
     public void setWeight(double weight){
         this.weight=weight;

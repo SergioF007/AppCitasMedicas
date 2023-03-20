@@ -11,6 +11,7 @@ public class Main {
 
         // creo un Doctor
         Doctor myDoctor = new Doctor("Jose Ignacio Fernández", "Cardiologia");
+        System.out.println(myDoctor);
 
         myDoctor.addAvalableAppointment(new Date(), "1:00pm" );
         myDoctor.addAvalableAppointment(new Date(), "2:00pm" );
@@ -22,13 +23,10 @@ public class Main {
             System.out.println(cita.getDate() + " " + cita.getTime());
         }
         // creo un paciente
-        /*
+        System.out.println();
         Patient patient = new Patient("Jame Rodrigez", "jame10@gmail.com");
-        patient.setWeight(80);
-        System.out.println(patient.getWeight());
+        System.out.println(patient);
 
-        patient.setPhoneNumber("123456789");
-        System.out.println(patient.getPhoneNumber()); */
 
     }
 }

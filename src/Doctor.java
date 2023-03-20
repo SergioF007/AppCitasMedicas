@@ -71,4 +71,10 @@ public class Doctor extends User {
         return availableAppointments;
     }
 
+    @Override
+    public String toString() {
+        return super.toString() + "\nSpeciality: " + speciality;
+    }
+
+
 }

@@ -10,6 +10,14 @@ public class User {
     private String address;
     private String phoneNumber;
 
+    //metodo toString
+
+
+    @Override
+    public String toString() {
+        return "User: " + name + " Email: " + email + "\nAddress: " + address + " phone: " + phoneNumber;
+    }
+
     public User(String name, String email) {
         this.name = name;
         this.email = email;
@@ -58,4 +66,6 @@ public class User {
             System.out.println("El numero de telefono debe ser de 8 Digitos");
         }
     }
+
+
 }
