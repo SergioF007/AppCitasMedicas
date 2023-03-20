@@ -1,37 +1,27 @@
+import ui.User;
+
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.Scanner;
 
-public class Doctor {
+public class Doctor extends User {
     //Atributos
-    private static int id = 0; //Autoincrement
-    private String name;
+
     private String speciality;
 
+    public Doctor(String name, String email) {
+        super(name, email);
 
-    public Doctor() {
-        id++;
-        System.out.println("Contruyendo el Objeto Doctor");
-
+        System.out.println("El nombre del Doctro Asignado es: " + name);
     }
 
-    public Doctor(String name, String speciality) {
-        System.out.println("El nombre del Doctro Asignado es: " + name);
-        id++;
-        this.name = name;
+    public String getSpeciality() {
+        return speciality;
+    }
+
+    public void setSpeciality(String speciality) {
         this.speciality = speciality;
     }
-
-    //Comportamientos
-    public void showName(){
-
-        System.out.println(name);
-    }
-    public void showID(){
-
-        System.out.println("ID Doctor: " + id);
-    }
-
 
     public static class AvailableAppointment {
 

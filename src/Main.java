@@ -11,6 +11,7 @@ public class Main {
 
         // creo un Doctor
         Doctor myDoctor = new Doctor("Jose Ignacio Fernández", "Cardiologia");
+
         myDoctor.addAvalableAppointment(new Date(), "1:00pm" );
         myDoctor.addAvalableAppointment(new Date(), "2:00pm" );
         myDoctor.addAvalableAppointment(new Date(), "3:00pm" );
@@ -28,6 +29,6 @@ public class Main {
 
         patient.setPhoneNumber("123456789");
         System.out.println(patient.getPhoneNumber()); */
-        
+
     }
 }
