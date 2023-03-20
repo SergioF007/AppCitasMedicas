@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.Scanner;
 
@@ -6,12 +7,6 @@ public class Doctor {
     private static int id = 0; //Autoincrement
     private String name;
     private String speciality;
-
-    // Atributos de la clase anidada staic AvailableAppointment
-    private int id_availableAppointment;
-
-    private Date date;
-    private String time;
 
 
     public Doctor() {
@@ -74,5 +69,16 @@ public class Doctor {
         }
     }
 
+    // Creo una colleccion de objetos AvailableAppointment
+    ArrayList<AvailableAppointment> availableAppointments = new ArrayList<>();
+
+    // metodo para agregar citas
+    public void addAvalableAppointment(Date date, String time) {
+        availableAppointments.add(new AvailableAppointment(date,time));
+
+    }
+    public ArrayList<AvailableAppointment> getAvailableAppointments(){
+        return availableAppointments
+    }
 
 }
