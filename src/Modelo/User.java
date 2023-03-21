@@ -2,7 +2,7 @@ package Modelo;
 
 import com.sun.xml.internal.ws.api.ha.StickyFeature;
 
-public class User {
+public abstract class User {
 
     private int id;
     private String name;
@@ -22,6 +22,8 @@ public class User {
         this.name = name;
         this.email = email;
     }
+
+    public abstract void showDateUser();
 
     public int getId() {
         return id;

@@ -16,6 +16,12 @@ public class Doctor extends User {
         System.out.println("El nombre del Doctro Asignado es: " + name);
     }
 
+    @Override
+    public void showDateUser() {
+        System.out.println("Doctor del Hospital: Cruz Roja");
+        System.out.println("Departemento: Cancerología");
+    }
+
     public String getSpeciality() {
         return speciality;
     }

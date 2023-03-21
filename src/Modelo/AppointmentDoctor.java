@@ -2,7 +2,7 @@ package Modelo;
 
 import java.util.Date;
 
-public class AppointmentDoctro {
+public class AppointmentDoctor implements ISchedulable {
 
     private int id;
     private Patient patient;
@@ -10,7 +10,7 @@ public class AppointmentDoctro {
     private Date date;
     private String time;
 
-    public AppointmentDoctro(int id, Patient patient, Doctor doctor, Date date, String time) {
+    public AppointmentDoctor(int id, Patient patient, Doctor doctor, Date date, String time) {
         this.id = id;
         this.patient = patient;
         this.doctor = doctor;
@@ -56,5 +56,10 @@ public class AppointmentDoctro {
 
     public void setTime(String time) {
         this.time = time;
+    }
+
+    @Override
+    public void schedule(Date date, String time) {
+
     }
 }
