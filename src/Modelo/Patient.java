@@ -1,6 +1,6 @@
-package ui;
+package Modelo;
 
-public class Patient extends User{
+public class Patient extends User {
 
     private String birthday;
     private double weight;

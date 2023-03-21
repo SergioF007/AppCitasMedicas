@@ -1,8 +1,9 @@
-import ui.User;
+package Modelo;
+
+import Modelo.User;
 
 import java.util.ArrayList;
 import java.util.Date;
-import java.util.Scanner;
 
 public class Doctor extends User {
     //Atributos
