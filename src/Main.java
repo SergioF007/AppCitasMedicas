@@ -18,9 +18,17 @@ public class Main {
 
         System.out.println(myDoctor.getAvailableAppointments());
 
+        Doctor doct = new Doctor("Federico", "fede@gmail.com");
+        doct.showDateUser();
+
+        Patient pat = new Patient("James", "jame@gmail.com");
+        pat.showDateUser();
+
+        /*
         for(Doctor.AvailableAppointment cita : myDoctor.getAvailableAppointments()) {
             System.out.println(cita.getDate() + " " + cita.getTime());
         }
+         */
         // creo un paciente
         System.out.println();
         Patient patient = new Patient("Jame Rodrigez", "jame10@gmail.com");
