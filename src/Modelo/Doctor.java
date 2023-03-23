@@ -62,6 +62,13 @@ public class Doctor extends User {
             return date;
         }
 
+        // sobre escribo el metodo setDate para que me reciba un String
+
+        public String getDate(String DATE) {
+            return format.format(date);
+
+        }
+
         public void setDate(Date date) {
             this.date = date;
         }
