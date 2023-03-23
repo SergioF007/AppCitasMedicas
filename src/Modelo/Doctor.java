@@ -2,6 +2,8 @@ package Modelo;
 
 import Modelo.User;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 
@@ -36,8 +38,15 @@ public class Doctor extends User {
         private Date date;
         private String time;
 
-        public AvailableAppointment(Date date, String time) {
-            this.date = date;
+        // Creamos un clase a una variables para formatiar el tipo de dato fecha
+        SimpleDateFormat format = new SimpleDateFormat("DD/MM/YYYY");
+
+        public AvailableAppointment(String date, String time) {
+            try {
+                this.date = format.parse(date);
+            } catch (ParseException e) {
+                throw new RuntimeException(e);
+            }
             this.time = time;
         }
 
@@ -70,7 +79,8 @@ public class Doctor extends User {
     ArrayList<AvailableAppointment> availableAppointments = new ArrayList<>();
 
     // metodo para agregar citas
-    public void addAvalableAppointment(Date date, String time) {
+    public void addAvalableAppointment(String date, String time) {
+
         availableAppointments.add(new AvailableAppointment(date,time));
 
     }
