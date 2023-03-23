@@ -1,10 +1,17 @@
 package ui;
 
+import Modelo.Doctor;
 import groovy.lang.GString;
 
+import java.util.ArrayList;
+import java.util.Date;
 import java.util.Scanner;
 
 public class UIDoctorMenu {
+
+    // Vamos a crear una Colleccion de doctores con citas disponibles
+    public static ArrayList<Doctor> doctorsAvailableAppointments = new ArrayList<>();
+
 
     public static void showDoctorMenu() {
 
@@ -83,11 +90,20 @@ public class UIDoctorMenu {
              }else if (response == 0) {
                  showDoctorMenu();
              }
-
         }while (response != 0);
+    }
 
+    // Metodo checkDoctorAvailableAppointements para mirar la citas disponibles de Doctor
 
+    public static void checkDoctorAvailableAppointements(Doctor doctor) {
 
+        //Entramos hacer un par de validaciones: Si tiene citas disponibles y si el Doctor existe en la lista que creamos
+        // hay si añada las citas que se crearon.
+        if (doctor.getAvailableAppointments().size() >0
+            && !doctorsAvailableAppointments.contains(doctor) ) {
+
+            doctorsAvailableAppointments.add(doctor);
+        }
 
     }
 }
