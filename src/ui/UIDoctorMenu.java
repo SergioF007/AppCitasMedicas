@@ -84,6 +84,7 @@ public class UIDoctorMenu {
                   // Despues de tomar y confirmar los datos la citas disponlibles del Doctor
                   // vamamos a implementar el metodo para agregar esta citas
                  UIMenu.doctorLogeed.addAvalableAppointment(date, time);
+                 checkDoctorAvailableAppointements(UIMenu.doctorLogeed);
 
 
 
