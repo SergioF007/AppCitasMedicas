@@ -10,12 +10,9 @@ public class AppointmentNurse implements ISchedulable {
     private Date date;
     private String time;
 
-    public AppointmentNurse(int id, Patient patient, Nurse nurse, Date date, String time) {
-        this.id = id;
+    public AppointmentNurse(Patient patient, Nurse nurse) {
         this.patient = patient;
         this.nurse = nurse;
-        this.date = date;
-        this.time = time;
     }
 
     public int getId() {

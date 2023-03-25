@@ -10,7 +10,7 @@ public class UIMenu {
 
     public static final String[] MONTHS ={"Enero", "Febrero", "Marzo", "Abril", "Mayo","Junio","Julio","Septiembre","Octubre","Noviembre","Diciembre" };
 
-    public static Doctor doctorLogeed;
+    public static Doctor doctorLogged;
 
     public static Patient patientLogged;
     public static void showMenu() {
@@ -37,6 +37,7 @@ public class UIMenu {
                     response = 0;
                 case 0:
                     System.out.println("Thank you for you visit");
+                    response = 0;
                     break;
                 default:
                     System.out.println("Please select a correct answer");
@@ -51,10 +52,10 @@ public class UIMenu {
     private static void authUser(int userType) {
         //Docotor userType = 1
         //Patien userType = 2
-        ArrayList<Doctor> docotrs = new ArrayList<>();
-        docotrs.add(new Doctor("Sergio Fernandez Salazar", "sfs@gamil.com"));
-        docotrs.add(new Doctor("Sebastian ramon", "seb@gamil.com"));
-        docotrs.add(new Doctor("Camilo Rodrigrez", "cam@gamil.com"));
+        ArrayList<Doctor> doctors = new ArrayList<>();
+        doctors.add(new Doctor("Sergio Fernandez Salazar", "sfs@gamil.com"));
+        doctors.add(new Doctor("Sebastian ramon", "seb@gamil.com"));
+        doctors.add(new Doctor("Camilo Rodrigrez", "cam@gamil.com"));
 
         ArrayList<Patient> patients = new ArrayList<>();
         patients.add(new Patient("Jose Fernandez", "jse@gamil.com"));
@@ -69,12 +70,13 @@ public class UIMenu {
 
             if (userType == 1) {
 
-                for (Doctor d: docotrs) {
+                for (Doctor d: doctors) {
                     if(d.getEmail().equals(email)) {
                         emailCorrect = true;
                         //Obtener el ususario logeado
-                        doctorLogeed = d;
+                        doctorLogged = d;
                         //showDoctorMenu
+                        UIDoctorMenu.showDoctorMenu();
                     }
                 }
 
@@ -83,6 +85,7 @@ public class UIMenu {
                     if(p.getEmail().equals(email)) {
                         emailCorrect = true;
                         patientLogged = p;
+                        UIPatientMenu.showPatientMenu();
                     }
                 }
             }

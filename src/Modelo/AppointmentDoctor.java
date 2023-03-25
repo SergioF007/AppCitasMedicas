@@ -10,12 +10,9 @@ public class AppointmentDoctor implements ISchedulable {
     private Date date;
     private String time;
 
-    public AppointmentDoctor(int id, Patient patient, Doctor doctor, Date date, String time) {
-        this.id = id;
+    public AppointmentDoctor(Patient patient, Doctor doctor) {
         this.patient = patient;
         this.doctor = doctor;
-        this.date = date;
-        this.time = time;
     }
 
     public int getId() {
@@ -51,7 +48,7 @@ public class AppointmentDoctor implements ISchedulable {
     }
 
     public String getTime() {
-        return time;
+        return time + "Hrs";
     }
 
     public void setTime(String time) {
@@ -60,6 +57,7 @@ public class AppointmentDoctor implements ISchedulable {
 
     @Override
     public void schedule(Date date, String time) {
-
+        this.date = date;
+        this.time = time; 
     }
 }

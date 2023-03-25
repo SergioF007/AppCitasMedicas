@@ -14,8 +14,6 @@ public class Doctor extends User {
 
     public Doctor(String name, String email) {
         super(name, email);
-
-        System.out.println("El nombre del Doctro Asignado es: " + name);
     }
 
     @Override
@@ -83,7 +81,7 @@ public class Doctor extends User {
     }
 
     // Creo una colleccion de objetos AvailableAppointment
-    ArrayList<AvailableAppointment> availableAppointments = new ArrayList<>();
+    private ArrayList<AvailableAppointment> availableAppointments = new ArrayList<>();
 
     // metodo para agregar citas
     public void addAvalableAppointment(String date, String time) {

@@ -20,7 +20,7 @@ public class UIDoctorMenu {
         do {
             System.out.println("\n\n");
             System.out.println(":: Doctor");
-            System.out.println("Welcome " + UIMenu.doctorLogeed.getName());
+            System.out.println("Welcome " + UIMenu.doctorLogged.getName());
             System.out.println("1. Add available Appoinment");
             System.out.println("2. My scheduled appointments");
             System.out.println("0. Exit");
@@ -30,6 +30,8 @@ public class UIDoctorMenu {
 
             switch (response) {
                 case 1:
+                    showAddAvailableAppointmentsMenu();
+                    response = 0;
                     break;
                 case 2:
                     break;
@@ -48,7 +50,6 @@ public class UIDoctorMenu {
             System.out.println();
             System.out.println(":: Add Available Appointment");
             System.out.println(":: Select a Month");
-
             for (int i = 0; i < 3; i++) {
 
                 int j = i + 1;
@@ -58,16 +59,31 @@ public class UIDoctorMenu {
 
             Scanner sc = new Scanner(System.in);
             response = Integer.valueOf(sc.nextLine());
-             if (response > 0 && response >4) {
+            if (response > 0 && response < 4) {
 
                  int monthSelected = response;
-                 System.out.println(monthSelected + ". " + UIMenu.MONTHS[monthSelected-1]);
-                 System.out.println("Insert the date available: [DD/MM/YYYY]");
-                 String date = sc.nextLine();
-                 //confirmacion
-                 System.out.println("Your date is: "+ date + "\n 1. Correcte" + "\n 2. Change Date");
-                 int responseDate = Integer.valueOf(sc.nextLine());
-                 if (responseDate == 2) continue;
+                 int responseDate = 0;
+                 String date = "";
+
+                 /*
+                 do {
+                     System.out.println("\n\n");
+                     System.out.println(monthSelected + ". " + UIMenu.MONTHS[monthSelected-1]);
+                     System.out.println("Insert the date available: [DD/MM/YYYY]");
+                     date = sc.nextLine();
+                     System.out.println("Your date is: "+ date + "\n 1. Correcte" + "\n 2. Change Date");
+                     responseDate = Integer.valueOf(sc.nextLine());
+
+                 }while (responseDate == 2);
+                */
+                System.out.println("\n\n");
+                System.out.println(monthSelected + ". " + UIMenu.MONTHS[monthSelected-1]);
+                System.out.println("Insert the date available: [DD/MM/YYYY]");
+                date = sc.nextLine();
+                System.out.println("Your date is: "+ date + "\n 1. Correcte" + "\n 2. Change Date");
+                responseDate = Integer.valueOf(sc.nextLine());
+                if(responseDate == 2) continue;
+
                  // seguimos a seleccionar la hora que el doctor tiene disponible para cita
                  int responseTime= 0;
                  String time = "";
@@ -77,20 +93,18 @@ public class UIDoctorMenu {
                       time = sc.nextLine();
                       // confirmacion
                       System.out.println("Your time is: " + time + "\n 1. Correcte" + "\n 2. Change time ");
-                      responseTime = sc.nextInt();
+                      responseTime = Integer.valueOf(sc.nextLine());
 
                   }while (responseTime == 2);
 
                   // Despues de tomar y confirmar los datos la citas disponlibles del Doctor
                   // vamamos a implementar el metodo para agregar esta citas
-                 UIMenu.doctorLogeed.addAvalableAppointment(date, time);
-                 checkDoctorAvailableAppointements(UIMenu.doctorLogeed);
+                 UIMenu.doctorLogged.addAvalableAppointment(date, time);
+                 checkDoctorAvailableAppointements(UIMenu.doctorLogged);
 
-
-
-             }else if (response == 0) {
-                 showDoctorMenu();
-             }
+            }else if (response == 0) {
+                showDoctorMenu();
+            }
         }while (response != 0);
     }
 
