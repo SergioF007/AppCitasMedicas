@@ -37,7 +37,7 @@ public class Doctor extends User {
         private String time;
 
         // Creamos un clase a una variables para formatiar el tipo de dato fecha
-        SimpleDateFormat format = new SimpleDateFormat("DD/MM/YYYY");
+        SimpleDateFormat format = new SimpleDateFormat("dd/MM/yyyy");
 
         public AvailableAppointment(String date, String time) {
             try {
@@ -56,13 +56,13 @@ public class Doctor extends User {
             this.id = id;
         }
 
-        public Date getDate() {
+        public Date getDate(String DATE) {
             return date;
         }
 
         // sobre escribo el metodo setDate para que me reciba un String
 
-        public String getDate(String DATE) {
+        public String getDate() {
             return format.format(date);
 
         }
