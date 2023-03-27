@@ -34,6 +34,7 @@ public class UIDoctorMenu {
                     response = 0;
                     break;
                 case 2:
+
                     break;
                 case 0:
                     UIMenu.showMenu();

@@ -1,5 +1,6 @@
 package Modelo;
 
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class AppointmentDoctor implements ISchedulable {
@@ -9,6 +10,8 @@ public class AppointmentDoctor implements ISchedulable {
     private Doctor doctor;
     private Date date;
     private String time;
+
+    SimpleDateFormat format = new SimpleDateFormat("dd/MM/yyyy");
 
     public AppointmentDoctor(Patient patient, Doctor doctor) {
         this.patient = patient;
@@ -39,8 +42,12 @@ public class AppointmentDoctor implements ISchedulable {
         this.doctor = doctor;
     }
 
-    public Date getDate() {
+    public Date getDate(String DATE) {
         return date;
+    }
+
+    public String getDate() {
+        return format.format(date);
     }
 
     public void setDate(Date date) {

@@ -60,6 +60,7 @@ public class Doctor extends User {
             return date;
         }
 
+
         // sobre escribo el metodo setDate para que me reciba un String
 
         public String getDate() {
